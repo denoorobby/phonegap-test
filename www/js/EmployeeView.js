@@ -3,13 +3,15 @@ var EmployeeView = function(employee) {
     this.addLocation = function(event) {
     event.preventDefault();
     console.log('addLocation');
-    navigator.geolocation.getCurrentPosition(
-        function(position) {
-            $('.location', this.el).html(position.coords.latitude + ',' + position.coords.longitude);
-        },
-        function() {
-            alert('Error getting location');
-        });
+        var onSuccess = function(position) {
+            app.showAlert(position.coords.latitude +", " + position.coords.longitude,"Position");
+};
+
+function onError(error) {
+    app.showAlert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n',"Error");
+}
+
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
     return false;
 };
     
