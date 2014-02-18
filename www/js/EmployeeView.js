@@ -12,6 +12,7 @@ function onError(error) {
 }
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        $(".location").html("Looking for location");
     return false;
 };
     
@@ -24,6 +25,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
         
         this.el = $('<div/>');
         this.el.on('click', '.add-location-btn', this.addLocation);
+        this.el.on('touchend', '.add-location-btn', this.addLocation);
     };
  
     this.initialize();
