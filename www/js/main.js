@@ -1,19 +1,7 @@
 var app = {
-    findByName: function() {
-    var self = this;
-    this.store.findByName($('.search-key').val(), function(employees) {
-        $('.employee-list').html(self.employeeLiTpl(employees));
-        if (self.iscroll) {
-            console.log('Refresh iScroll');
-            self.iscroll.refresh();
-        } else {
-            console.log('New iScroll');
-            self.iscroll = new iScroll($('.scroll', self.el)[0], {hScrollbar: false, vScrollbar: false });
-        }
-    });
-},
     registerEvents: function() {
     var self = this;
+    $(window).on('hashchange', $.proxy(this.route, this));
     // Check of browser supports touch events...
     if (document.documentElement.hasOwnProperty('ontouchstart')) {
         // ... if yes: register touch event listener to change the "selected" state of the item
@@ -33,6 +21,20 @@ var app = {
         });
     }
 },
+    route: function() {
+    var hash = window.location.hash;
+    var self = this;
+    if (!hash) {
+        $('body').html(new HomeView(this.store).render().el);
+        return;
+    }
+    var match = hash.match(app.detailsURL);
+    if (match) {
+        this.store.findById(Number(match[1]), function(employee) {
+            $('body').html(new EmployeeView(employee).render().el);
+        });
+    }
+},
     
     showAlert: function (message, title) {
     if (navigator.notification) {
@@ -41,23 +43,14 @@ var app = {
         alert(title ? (title + ": " + message) : message);
     }
 },
-    
-    renderHomeView: function() {
-    $('body').html(this.homeTpl());
-    $('.search-key').on('keyup', $.proxy(this.findByName, this));
-},
-
     initialize: function() {
     var self = this;
-        this.homeTpl = Handlebars.compile($("#home-tpl").html());
-        this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
-        self.registerEvents();
+    this.detailsURL = /^#employees\/(\d{1,})/;
+    this.registerEvents();
     this.store = new MemoryStore(function() {
-        self.renderHomeView();
+        self.route();
     });
-        
 }
-
 };
 
 app.initialize();
