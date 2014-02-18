@@ -7,15 +7,15 @@ var EmployeeView = function(employee) {
             app.showAlert(position.coords.latitude +", " + position.coords.longitude,"Position");
 };
 
-function onError(error) {
-    app.showAlert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n',"Error");
-}
+    function onError(error) {
+        app.showAlert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n',"Error");
+    }
+            var options = {maximumAge: 0, timeout: 10000, enableHighAccuracy:true}; 
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-        
-        $(".location").html("Looking for location");
-    return false;
-};
+            $(".location").html("Looking for location");
+        return false;
+    };
     
         this.render = function() {
         this.el.html(EmployeeView.template(employee));
@@ -26,7 +26,6 @@ function onError(error) {
         
         this.el = $('<div/>');
         this.el.on('click', '.add-location-btn', this.addLocation);
-        //this.el.on('touchend', '.add-location-btn', this.addLocation);
     };
  
     this.initialize();
