@@ -13,7 +13,6 @@ function onError(error) {
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
         $(".location").html("Looking for location");
-        app.showAlert("testing alert");
     return false;
 };
     
