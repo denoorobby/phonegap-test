@@ -11,7 +11,10 @@ function onError(error) {
     app.showAlert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n',"Error");
 }
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        var geo = phonegap.require('phonegap/plugin/geolocation');
+        geo.getCurrentPosition(onSuccess, onError);
+        
+//navigator.geolocation.getCurrentPosition(onSuccess, onError);
         $(".location").html("Looking for location");
     return false;
 };
