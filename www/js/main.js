@@ -50,7 +50,7 @@ var app = {
         $('body').html(new OrientationView().render().el);
         return;
     }else if(hash.match(app.externalURL)){
-        window.location="http://trinch.be";
+        window.location.href = "http://trinch.be";
         return;
     }
 },
