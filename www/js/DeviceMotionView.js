@@ -17,7 +17,7 @@ var DeviceMotionView = function() {
             return false;
         }
         
-        var options = { frequency: 3000 };  // Update every 3 seconds
+        var options = { frequency: 500 };  // Update every 3 seconds
         var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
         
     }
