@@ -16,6 +16,7 @@ var HomeView = function(store) {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div/>');
         this.el.on('keyup', '.search-key', this.findByName);
+        
     };
  
     this.initialize();

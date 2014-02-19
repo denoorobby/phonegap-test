@@ -21,18 +21,27 @@ var app = {
         });
     }
 },
+
     route: function() {
     var hash = window.location.hash;
     var self = this;
     if (!hash) {
         $('body').html(new HomeView(this.store).render().el);
+        //Setup the ViewNavigator
+		new SlidingView( 'sidebar', 'content' );
         return;
     }
     var match = hash.match(app.detailsURL);
     if (match) {
         this.store.findById(Number(match[1]), function(employee) {
             $('body').html(new EmployeeView(employee).render().el);
+            return;
         });
+    }
+    match = hash.match(app.locationURL);
+    if (match) {
+            $('body').html(new LocationView().render().el);
+            return;
     }
 },
     
@@ -46,6 +55,7 @@ var app = {
     initialize: function() {
     var self = this;
     this.detailsURL = /^#employees\/(\d{1,})/;
+    this.locationURL = /^#location/;
     this.registerEvents();
     this.store = new MemoryStore(function() {
         self.route();
@@ -53,4 +63,6 @@ var app = {
 }
 };
 
-app.initialize();
+$( document ).ready(function(){
+     app.initialize();
+});
