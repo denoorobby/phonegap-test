@@ -46,6 +46,9 @@ var app = {
     }else if(hash.match(app.deviceMotionURL)){
         $('body').html(new DeviceMotionView().render().el);
         return;
+    }else if(hash.match(app.orientationURL)){
+        $('body').html(new OrientationView().render().el);
+        return;
     }
 },
     
@@ -62,6 +65,7 @@ var app = {
     this.locationURL = /^#location/;
     this.cameraURL = /^#camera/;
     this.deviceMotionURL = /^#device-motion/;
+    this.orientationURL = /^#orientation/;
     this.registerEvents();
     this.store = new MemoryStore(function() {
         self.route();
