@@ -31,7 +31,8 @@ var app = {
 		new SlidingView( 'sidebar', 'content' );
         return;
     }
-    if (hash.match(app.detailsURL)) {
+    var match = hash.match(app.detailsURL);
+    if (match) {
         this.store.findById(Number(match[1]), function(employee) {
             $('body').html(new EmployeeView(employee).render().el);
             return;
@@ -41,6 +42,9 @@ var app = {
         return;
     }else if(hash.match(app.cameraURL)){
         $('body').html(new CameraView().render().el);
+        return;
+    }else if(hash.match(app.deviceMotionURL)){
+        $('body').html(new DeviceMotionView().render().el);
         return;
     }
 },
@@ -57,6 +61,7 @@ var app = {
     this.detailsURL = /^#employees\/(\d{1,})/;
     this.locationURL = /^#location/;
     this.cameraURL = /^#camera/;
+    this.deviceMotionURL = /^#device-motion/;
     this.registerEvents();
     this.store = new MemoryStore(function() {
         self.route();

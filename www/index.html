@@ -33,12 +33,13 @@
             <ul>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#camera">Camera</a></li>
+                <li><a href="#device-motion">Accelerator</a></li>
             </ul>
         </div>
     <div id="content">
         <div class="header"><h1 class="ui-title">Home</h1></div>
     <div class='search-bar'><input class='search-key' type="search"/></div>
-    <div class="scroll"><ul data-role="listview" data-inset="true" data-filter="true" class='employee-list'></ul></div>
+    <div class="scroll"><ul class='employee-list'></ul></div>
         </div>
 </script>
     
@@ -55,6 +56,11 @@
         <a class="button btn-take-picture">Take picture</a>
         </div>
 </script>
+    <script id="device-motion-tpl" type="text/x-handlebars-template">
+        
+        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Device Motion</h1></div>
+        <p class="motion-output"></p>
+</script>
     
     <script id="employee-li-tpl" type="text/x-handlebars-template">
     {{#.}}
@@ -67,6 +73,7 @@
 </script> 
     <script src="js/HomeView.js"></script>
     <script src="js/CameraView.js"></script>
+    <script src="js/DeviceMotionView.js"></script>
     <script src="js/LocationView.js"></script>
     <script src="js/EmployeeView.js"></script>
 <script src="js/main.js"></script>

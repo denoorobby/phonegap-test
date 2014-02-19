@@ -53,5 +53,6 @@
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
     <access origin="http://127.0.0.1*" />
 </widget>

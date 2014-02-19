@@ -198,6 +198,7 @@ li>a.tappable-active {
 .btn-take-picture{
     padding:15px;
     cursor: pointer;
+    margin-bottom: 50px;
 }
 
 .button {
