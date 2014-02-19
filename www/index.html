@@ -23,8 +23,6 @@
             <li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
             <li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
             <li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
-            <li><a href="#" class="change-pic-btn">Change Picture</a></li>
-            <li><a href="#location" class="add-location-btn">Add Location</a></li>
             <li><a href="#" class="add-contact-btn">Add to Contacts</a></li>
             
         </ul>
@@ -34,8 +32,7 @@
         <div id="sidebar">
             <ul>
                 <li><a href="#location">Location</a></li>
-                <li><a href="#location">Test sidebar</a></li>
-                <li><a href="#location">Test sidebar</a></li>
+                <li><a href="#camera">Camera</a></li>
             </ul>
         </div>
     <div id="content">
@@ -50,6 +47,14 @@
         <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>My Location</h1></div>
     <div id="maps"></div>
 </script>
+    <script id="camera-tpl" type="text/x-handlebars-template">
+        
+        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Take a photo</h1></div>
+    <div class="photo">
+        <img class="image" />
+        <a class="button btn-take-picture">Take picture</a>
+        </div>
+</script>
     
     <script id="employee-li-tpl" type="text/x-handlebars-template">
     {{#.}}
@@ -57,7 +62,11 @@
     {{/.}}
 </script>
 <script src="lib/handlebars.js"></script>
+            <script type="text/javascript" 
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true">
+</script> 
     <script src="js/HomeView.js"></script>
+    <script src="js/CameraView.js"></script>
     <script src="js/LocationView.js"></script>
     <script src="js/EmployeeView.js"></script>
 <script src="js/main.js"></script>

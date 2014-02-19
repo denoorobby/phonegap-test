@@ -89,11 +89,23 @@ input[type="search"]:focus {
     background-color: #555;
 }
 
+#sidebar li, #sidebar ul{
+    border:none;
+}
+
 #sidebar a{
     color:#fff;
-    height:50px;
     background-color: #555;
     border-bottom: 1px solid #888;
+    font-weight: 600;
+    font-size:1.1em;
+    line-height: 35px;
+    padding:10px;
+}
+
+#maps{
+    height:100%;
+    width:100%;
 }
 
 ul {
@@ -170,6 +182,22 @@ li>a.tappable-active {
     bottom: 0px;
     left: 0px;
     right: 0px;
+}
+
+.photo{
+    text-align: center;
+}
+
+.photo >img {
+    display:block;
+    width:75%;
+    margin:50px auto 20px auto;
+    height:75%;
+}
+
+.btn-take-picture{
+    padding:15px;
+    cursor: pointer;
 }
 
 .button {

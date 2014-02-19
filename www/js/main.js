@@ -31,17 +31,17 @@ var app = {
 		new SlidingView( 'sidebar', 'content' );
         return;
     }
-    var match = hash.match(app.detailsURL);
-    if (match) {
+    if (hash.match(app.detailsURL)) {
         this.store.findById(Number(match[1]), function(employee) {
             $('body').html(new EmployeeView(employee).render().el);
             return;
         });
-    }
-    match = hash.match(app.locationURL);
-    if (match) {
-            $('body').html(new LocationView().render().el);
-            return;
+    }else if(hash.match(app.locationURL)){
+        $('body').html(new LocationView().render().el);
+        return;
+    }else if(hash.match(app.cameraURL)){
+        $('body').html(new CameraView().render().el);
+        return;
     }
 },
     
@@ -56,6 +56,7 @@ var app = {
     var self = this;
     this.detailsURL = /^#employees\/(\d{1,})/;
     this.locationURL = /^#location/;
+    this.cameraURL = /^#camera/;
     this.registerEvents();
     this.store = new MemoryStore(function() {
         self.route();
