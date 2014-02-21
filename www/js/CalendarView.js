@@ -19,14 +19,6 @@ var CalendarView = function () {
     this.render = function () {
         this.el.html(CalendarView.template());
 
-        if (self.iscroll) {
-            console.log('Refresh iScroll');
-            self.iscroll.refresh();
-        } else {
-            console.log('New iScroll');
-            self.iscroll = new iScroll($('.scroll', self.el)[0], { hScrollbar: false, vScrollbar: false });
-        }
-
         return this;
     };
 
