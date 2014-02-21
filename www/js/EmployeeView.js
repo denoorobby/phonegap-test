@@ -26,7 +26,6 @@ var EmployeeView = function(employee) {
     this.initialize = function() {
         var self = this;
         this.el = $('<div/>');
-        //this.el.on('click', '.add-location-btn', this.addLocation);
         this.el.on('click', '.add-contact-btn', this.addToContacts);
         
     };
