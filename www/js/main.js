@@ -50,7 +50,7 @@ var app = {
         $('body').html(new OrientationView().render().el);
         return;
     }else if(hash.match(app.externalURL)){
-       navigator.app.loadUrl("http://trinch.be", { openExternal:true });
+        var ref = window.open('http://google.com', '_self');
         return;
     }
 },
