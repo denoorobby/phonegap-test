@@ -5,8 +5,8 @@ var CalendarView = function () {
     this.addToCalendar = function () {
         // prep some variables
         var datetime = $("#start").val().split(" ");
-        var startDate = new Date(2014, 2, 21, 18, 30, 0, 0, 0); // beware: month 0 = january, 11 = december
-        var endDate = new Date(2014, 2, 21, 19, 30, 0, 0, 0);
+        var startDate = new Date(2014, 1, 21, 18, 30, 0, 0, 0); // beware: month 0 = january, 11 = december
+        var endDate = new Date(2014, 1, 21, 19, 30, 0, 0, 0);
         var title = "My nice event";
         var location = "Home";
         var notes = "Some notes about this event.";

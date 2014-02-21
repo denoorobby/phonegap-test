@@ -10,13 +10,10 @@
 <script src="js/storage/memory-store.js"></script>
         <script src="lib/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="themes/Bootstrap.min.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/slidingview.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 
-        
-        <!--<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-        <script src="themes/jquery.mobile-1.4.1.min.js"></script>-->
     </head>
 <body>
     <script id="employee-tpl" type="text/x-handlebars-template">
@@ -63,27 +60,18 @@
 </script>
     <script id="calendar-tpl" type="text/x-handlebars-template">
         <div data-role="page" data-theme="a">
-            <div data-role="header" data-position="inline">
-                <h1>Calender</h1>
-            </div>
-            <div data-role="content" data-theme="a">
+            <div class="header col-md-12"><h1 class="ui-title">Calendar</h1></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Add event to calendar</h2>
+                        <button data-role="button" data-icon="star" class="btn btn-primary btn-lg btn-add-calendar">
+                            <span class="glyphicon glyphicon-calendar"></span> Add to calendar
+                        </button>
+                    </div>
+                </div>
 
-                <h2>Add event to calendar</h2>
-                <form>
-                    <fieldset>
-                        <legend>Event info</legend>
-                        <label>Title</label><input id="title" type="text" placeholder="title of the event" required />
-                        <label>Start</label><input id="start" type="datetime" required>
-                        <label>End</label><input id="end" type="datetime" required>
-                        <label>Location</label><input id="location" type="text" placeholder="location of the event" required />
-                        <label>Notes</label><textarea id="notes" placeholder="some notes about the event" cols="20" rows="5" />
-                        
-                    </fieldset>
-                </form>
-
-                <button data-role="button" data-icon="star" class="btn btn-primary btn-lg btn-add-calendar">
-                    <span class="glyphicon glyphicon-calendar"></span> Add to calendar
-                </button>
+                
             </div>
         </div>
     </script>
