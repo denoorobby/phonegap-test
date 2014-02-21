@@ -49,8 +49,8 @@ var app = {
     }else if(hash.match(app.orientationURL)){
         $('body').html(new OrientationView().render().el);
         return;
-    }else if(hash.match(app.externalURL)){
-        var ref = window.open('http://google.com', '_self');
+    } else if (hash.match(app.barcodeURL)) {
+        $('body').html(new BarcodeScannerView().render().el);
         return;
     }
 },
@@ -69,7 +69,7 @@ var app = {
     this.cameraURL = /^#camera/;
     this.deviceMotionURL = /^#device-motion/;
     this.orientationURL = /^#orientation/;
-    this.externalURL = /^#external/;
+    this.barcodeURL = /^#barcode/;
     this.registerEvents();
     this.store = new MemoryStore(function() {
         self.route();
