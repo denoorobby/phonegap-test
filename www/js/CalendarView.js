@@ -5,18 +5,11 @@ var CalendarView = function () {
     this.addToCalendar = function () {
         // prep some variables
         var datetime = $("#start").val().split(" ");
-        var date = datetime[0].split("/");
-        var time = datetime[1].split(":");
-        var startDate = new Date((date[2] - 0), (date[1].replace("0", "") - 1), (date[0] - 0), (time[0]-0), (time[1]-0), 0,0,0);
-
-        datetime = $("#end").val().split(" ");
-        date = datetime[0].split("/");
-        time = datetime[1].split(":");
-
-        var endDate = new Date((date[2] - 0), (date[1].replace("0", "") - 1), (date[0] - 0), (time[0] - 0), (time[1] - 0), 0, 0, 0);
-        var title = $("#title").val();
-        var location = $("#location").val();
-        var notes = $("#notes").val();
+        var startDate = new Date(2014, 2, 21, 18, 30, 0, 0, 0); // beware: month 0 = january, 11 = december
+        var endDate = new Date(2014, 2, 21, 19, 30, 0, 0, 0);
+        var title = "My nice event";
+        var location = "Home";
+        var notes = "Some notes about this event.";
         var success = function (message) { alert("Success: " + JSON.stringify(message)); };
         var error = function (message) { alert("Error: " + message); };
 
