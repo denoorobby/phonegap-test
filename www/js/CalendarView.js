@@ -4,8 +4,16 @@ var CalendarView = function () {
 
     this.addToCalendar = function () {
         // prep some variables
-        var startDate = Date.parse($("#start").val());
-        var endDate = Date.parse($("#end").val());
+        var datetime = $("#start").val().split(" ");
+        var date = datetime[0].split("/");
+        var time = datetime[1].split(":");
+        var startDate = new Date((date[2] - 0), (date[1].replace("0", "") - 1), (date[0] - 0), (time[0]-0), (time[1]-0), 0,0,0);
+
+        datetime = $("#end").val().split(" ");
+        date = datetime[0].split("/");
+        time = datetime[1].split(":");
+
+        var endDate = new Date((date[2] - 0), (date[1].replace("0", "") - 1), (date[0] - 0), (time[0] - 0), (time[1] - 0), 0, 0, 0);
         var title = $("#title").val();
         var location = $("#location").val();
         var notes = $("#notes").val();
@@ -18,7 +26,6 @@ var CalendarView = function () {
     
     this.render = function () {
         this.el.html(CalendarView.template());
-
         return this;
     };
 

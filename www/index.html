@@ -8,13 +8,15 @@
          <script src="lib/noClickDelay.js"></script>
     <script src="lib/iscroll.js"></script>
 <script src="js/storage/memory-store.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
 
+        <link rel="stylesheet" href="themes/Bootstrap.min.css">
         <link href="css/slidingview.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="themes/Bootstrap.min.css">
-        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-        <script src="themes/jquery.mobile-1.4.1.min.js"></script>
+        
+        <!--<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <script src="themes/jquery.mobile-1.4.1.min.js"></script>-->
     </head>
 <body>
     <script id="employee-tpl" type="text/x-handlebars-template">
@@ -75,11 +77,13 @@
                         <label>End</label><input id="end" type="datetime" required>
                         <label>Location</label><input id="location" type="text" placeholder="location of the event" required />
                         <label>Notes</label><textarea id="notes" placeholder="some notes about the event" cols="20" rows="5" />
-                        <button data-role="button" data-icon="star" class="btn btn-primary btn-lg btn-add-calendar">
-                            <span class="glyphicon glyphicon-calendar"></span> Add to calendar
-                        </button>
+                        
                     </fieldset>
                 </form>
+
+                <button data-role="button" data-icon="star" class="btn btn-primary btn-lg btn-add-calendar">
+                    <span class="glyphicon glyphicon-calendar"></span> Add to calendar
+                </button>
             </div>
         </div>
     </script>
@@ -115,8 +119,7 @@
             src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true">
     </script>
 <script src="lib/handlebars.js"></script>
-    <!--<script src="lib/jquery.mobile-1.4.1.min.js"></script>-->
-    <script src="lib/bootstrap.min.js"></script>
+    
     <script src="js/HomeView.js"></script>
     <script src="js/CameraView.js"></script>
     <script src="js/DeviceMotionView.js"></script>
