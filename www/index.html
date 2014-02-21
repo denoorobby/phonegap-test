@@ -38,7 +38,7 @@
                 <li><a href="#camera">Camera</a></li>
                 <li><a href="#device-motion">Accelerator</a></li>
                 <li><a href="#orientation">Orientation</a></li>
-                <li><a href="#barcode">Scan barcode</a></li>
+                <li><a href="#calendar">Calendar</a></li>
             </ul>
         </div>
     <div id="content" class="container">
@@ -55,12 +55,20 @@
         <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>My Location</h1></div>
     <div id="maps"></div>
 </script>
-    <script id="barcode-tpl" type="text/x-handlebars-template">
+    <script id="calendar-tpl" type="text/x-handlebars-template">
 
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Barcode</h1></div>
-        <button type="button" class="btn btn-default btn-lg btn-scan-barcode">
-            <span class="glyphicon glyphicon-barcode"></span> Scan a barcode
-        </button>
+        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Calendar</h1></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Add event to calendar</h1>
+                    <button type="button" class="btn btn-default btn-lg btn-add-calendar">
+                        <span class="glyphicon glyphicon-calendar"></span> Add to calendar
+                    </button>
+                </div>
+            </div>
+        </div>
+        
     </script>
 
 
@@ -97,7 +105,7 @@
     <script src="js/CameraView.js"></script>
     <script src="js/DeviceMotionView.js"></script>
     <script src="js/OrientationView.js"></script>
-    <script src="js/BarcodeScannerView.js"></script>
+    <script src="js/CalendarView.js"></script>
     <script src="js/LocationView.js"></script>
     <script src="js/EmployeeView.js"></script>
 <script src="js/main.js"></script>
