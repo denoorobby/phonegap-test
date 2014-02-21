@@ -81,6 +81,11 @@ input[type="search"]:focus {
 	box-shadow: inset 0 4px 8px rgba(0,0,0,.5), 0 1px #fff;
 }
 
+input, label, textarea{
+    display:block;
+    margin-bottom:10px;
+}
+
 #content{
     background-color: #fff;
 }
@@ -226,19 +231,6 @@ li>a.tappable-active {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
 	background-color:#dfdfdf;
 
-}
-
-h1 {
-    font-size: 18px;
-    padding: 20 0 0 0;
-    margin: 0px;
-}
-
-h2 {
-    font-size: 16px;
-    font-weight: normal;
-    padding: 0px;
-    margin: 0px;
 }
 
 .employee-image {

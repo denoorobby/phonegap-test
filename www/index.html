@@ -8,11 +8,12 @@
          <script src="lib/noClickDelay.js"></script>
     <script src="lib/iscroll.js"></script>
 <script src="js/storage/memory-store.js"></script>
-
-        <link href="css/styles.css" rel="stylesheet">
+        
+        <!--<link href="css/jquery.mobile-1.4.1.min.css" rel="stylesheet">-->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/slidingview.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
     </head>
 <body>
     <script id="employee-tpl" type="text/x-handlebars-template">
@@ -34,11 +35,11 @@
     <script id="home-tpl" type="text/x-handlebars-template">
         <div id="sidebar">
             <ul>
-                <li><a href="#location">Location</a></li>
-                <li><a href="#camera">Camera</a></li>
-                <li><a href="#device-motion">Accelerator</a></li>
-                <li><a href="#orientation">Orientation</a></li>
-                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#location" rel="external">Location</a></li>
+                <li><a href="#camera" rel="external">Camera</a></li>
+                <li><a href="#device-motion" rel="external">Accelerator</a></li>
+                <li><a href="#orientation" rel="external">Orientation</a></li>
+                <li><a href="#calendar" rel="external">Calendar</a></li>
             </ul>
         </div>
     <div id="content" class="container">
@@ -52,19 +53,33 @@
     
     <script id="location-tpl" type="text/x-handlebars-template">
         
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>My Location</h1></div>
+        <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>My Location</h1></div>
     <div id="maps"></div>
+
+         
 </script>
     <script id="calendar-tpl" type="text/x-handlebars-template">
 
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Calendar</h1></div>
+        <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>Calendar</h1></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h1>Add event to calendar</h1>
-                    <button type="button" class="btn btn-default btn-lg btn-add-calendar">
-                        <span class="glyphicon glyphicon-calendar"></span> Add to calendar
-                    </button>
+                    <form>
+                        <fieldset>
+                            <legend>Event info</legend>
+                            <label>Title</label><input id="title" type="text" placeholder="title of the event" required/>
+                            <label>Start</label><input id="start" type="datetime" required>
+                            <label>End</label><input id="end" type="datetime" required>
+                            <label>Location</label><input id="location" type="text" placeholder="location of the event" required />
+                            <label>Notes</label><textarea id="notes" placeholder="some notes about the event" cols="20" rows="5"/>
+                            <button class="btn btn-primary btn-lg btn-add-calendar">
+                                <span class="glyphicon glyphicon-calendar"></span> Add to calendar
+                            </button>
+                        </fieldset>
+                    </form>
+
+                    
                 </div>
             </div>
         </div>
@@ -74,7 +89,7 @@
 
     <script id="camera-tpl" type="text/x-handlebars-template">
         
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Take a photo</h1></div>
+        <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>Take a photo</h1></div>
     <div class="photo">
         <img class="image" />
         <a class="button btn-take-picture">Take picture</a>
@@ -82,12 +97,12 @@
 </script>
     <script id="device-motion-tpl" type="text/x-handlebars-template">
         
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Device Motion</h1></div>
+        <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>Device Motion</h1></div>
         <p class="motion-output"></p>
 </script>
         <script id="orientation-tpl" type="text/x-handlebars-template">
         
-        <div class='header'><a href='#' class="backbutton button header-button header-button-left">Back</a><h1>Device Orientation</h1></div>
+        <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>Device Orientation</h1></div>
         <p class="orientation-output"></p>
 </script>
     
@@ -96,10 +111,13 @@
     <li><a href="#employees/{{this.id}}" rel="external" >{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
     {{/.}}
 </script>
+
+
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true">
+    </script>
 <script src="lib/handlebars.js"></script>
-            <script type="text/javascript" 
-	src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true">
-</script> 
+    <!--<script src="lib/jquery.mobile-1.4.1.min.js"></script>-->
     <script src="lib/bootstrap.min.js"></script>
     <script src="js/HomeView.js"></script>
     <script src="js/CameraView.js"></script>

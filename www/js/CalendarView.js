@@ -4,11 +4,11 @@ var CalendarView = function () {
 
     this.addToCalendar = function () {
         // prep some variables
-        var startDate = new Date(2014, 1, 21, 18, 30, 0, 0, 0); // beware: month 0 = january, 11 = december
-        var endDate = new Date(2014, 1, 21, 19, 30, 0, 0, 0);
-        var title = "Phonegap test";
-        var location = "Trinch bvba";
-        var notes = "Dit is een event aangemaakt met phonegap.";
+        var startDate = Date.parse($("#start").val());
+        var endDate = Date.parse($("#end").val());
+        var title = $("#title").val();
+        var location = $("#location").val();
+        var notes = $("#notes").val();
         var success = function (message) { alert("Success: " + JSON.stringify(message)); };
         var error = function (message) { alert("Error: " + message); };
 
