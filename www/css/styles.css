@@ -84,6 +84,18 @@ input[type="search"]:focus {
 input, label, textarea{
     display:block;
     margin-bottom:10px;
+    width:100%;
+    height:40px;
+    font-size:1.2em;
+}
+
+label{
+    height:20px;
+    color:#888;
+}
+
+textarea{
+    height:100px;
 }
 
 #content{

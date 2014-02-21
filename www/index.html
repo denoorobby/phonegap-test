@@ -61,25 +61,25 @@
     <script id="calendar-tpl" type="text/x-handlebars-template">
 
         <div class='header'><a href='#' rel="external" class="backbutton button header-button header-button-left">Back</a><h1>Calendar</h1></div>
-        <div class="container">
+        <div class="container scroll">
             <div class="row">
                 <div class="col-md-12">
                     <h1>Add event to calendar</h1>
                     <form>
                         <fieldset>
                             <legend>Event info</legend>
-                            <label>Title</label><input id="title" type="text" placeholder="title of the event" required/>
+                            <label>Title</label><input id="title" type="text" placeholder="title of the event" required />
                             <label>Start</label><input id="start" type="datetime" required>
                             <label>End</label><input id="end" type="datetime" required>
                             <label>Location</label><input id="location" type="text" placeholder="location of the event" required />
-                            <label>Notes</label><textarea id="notes" placeholder="some notes about the event" cols="20" rows="5"/>
+                            <label>Notes</label><textarea id="notes" placeholder="some notes about the event" cols="20" rows="5" />
                             <button class="btn btn-primary btn-lg btn-add-calendar">
                                 <span class="glyphicon glyphicon-calendar"></span> Add to calendar
                             </button>
                         </fieldset>
                     </form>
 
-                    
+
                 </div>
             </div>
         </div>

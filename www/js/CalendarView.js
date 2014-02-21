@@ -18,7 +18,7 @@ var CalendarView = function () {
     
     this.render = function () {
         this.el.html(CalendarView.template());
-        this.iscroll = new iScroll($('.row', this.el)[0], { hScrollbar: false, vScrollbar: false });
+        this.iscroll = new iScroll($('.scroll', this.el)[0], { hScrollbar: false, vScrollbar: false });
         return this;
     };
 
